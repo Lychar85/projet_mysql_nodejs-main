@@ -1,19 +1,187 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+/* Navbar section =====================================*/
+.nav {
+  width: 100%;
 
-h1 {
-  font-family: 'DM Serif Display', serif;
+}
+.nav div.logo {
+  float: left;
+  width: auto;
+  height: auto;
+  padding-left: 3rem;
 }
 
-p {
-  color: #575a7b;
-  font-size: 1.375rem !important;
-  font-weight: 400  !important;
-  margin-bottom: 2rem !important;
-}
-
-.logo {
+.nav div.logo a {
   text-decoration: none;
-  font-size: 1.8rem !important;
-  color: #198754;
-  font-family: 'DM Serif Display', serif;
+  color: rgb(0, 0, 0);
+  font-size: 2.5rem;
+}
+
+.nav div.logo a:hover {
+  color: #f8c008;
+}
+
+#mainListDiv{
+  width: 800px;
+}
+
+.nav div.main_list ul {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav div.main_list ul li {
+  width: auto;
+  height: 65px;
+  padding: 0;
+  padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  line-height: 65px;
+  font-size: 20px;
+}
+
+.nav div.main_list ul li a:hover {
+  color: #f8c008;
+}
+
+.navigation{
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-assist{
+  margin-right: 50px;
+
+}
+
+/*page d'accueil============================================*/
+.header{
+  height: 900px;
+  background: url('/images/music_header.png') no-repeat;
+}
+
+.title{
+  font-size: 120px;
+}
+
+.link-decouverte{
+  margin-top: 50px;
+  max-width: 336px;
+  background: #f8c008;
+  
+  border-radius: 0px 0px 200px 200px;
+  transition: 1200ms;
+}
+
+.link-decouverte:hover{
+  border-radius: 200px 200px 0px 0px;
+  transition: 600ms;
+}
+
+.btn-decouverte{
+  font-size: 30px;
+  padding: 5px 15px 5px 15px;
+  transition: 600ms;
+}
+
+.btn-decouverte:hover{
+  transform: translateY(10px);
+  transition: 600ms;
+}
+
+/*page inscription====================================================*/
+.register{
+  width: 100%;
+  height:900px;
+  background: url('/images/music_register.jpg') no-repeat;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.form-register{
+  display: flex;
+  justify-content: center;
+  max-width: 60%;
+  position: relative;
+  top: 80px;
+}
+
+.form-register .row{
+  width: 60%;
+}
+/*formulaire==============================*/
+.btn-form-register{
+  background: #f8c008;
+  padding: 0px 40px 0px 40px;
+  float: right;
+  font-size: 180%;
+  color: #ffffff;
+  transition: 800ms;
+}
+
+.btn-form-register:hover{
+  color: #f8c008;
+  background: none;
+  transition: 600ms;
+}
+
+/*page connexion====================================================*/
+.login{
+  width: 100%;
+  height:700px;
+  background: url('/images/music_login.jpg') no-repeat;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.form-login{
+  display: flex;
+  justify-content: center;
+  max-width: 60%;
+  position: relative;
+  top: 80px;
+}
+
+.form-login .row{
+  width: 60%;
+}
+/*formulaire==============================*/
+.btn-form-login{
+  background: #f8c008;
+  padding: 0px 40px 0px 40px;
+  float: right;
+  font-size: 180%;
+  color: #ffffff;
+  transition: 800ms;
+}
+
+.btn-form-login:hover{
+  color: #f8c008;
+  background: none;
+  transition: 600ms;
+}
+
+.btn-form-redirect-register a{
+  font-size: 110%;
+  float: left;
+  color: black;
+  position: relative;
+  bottom: 20px;
+  right: 40px;
+}
+
+.btn-form-redirect-register a:hover{
+  color: #f8c008;
+  text-decoration: none;
 }

@@ -17,8 +17,12 @@ app.use(express.urlencoded({extended: false}))
 
 // Routes
 const index = require('./routes/indexRoute')
+const auth = require('./routes/authRoute')
+const dashboard = require('./routes/dashboardRoute')
 
 app.use('/', index)
+app.use('/auth', auth)
+app.use('/dashboard', dashboard)
 
 app.get('*', function(req, res){
   res.render('404');
