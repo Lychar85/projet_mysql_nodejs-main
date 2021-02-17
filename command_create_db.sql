@@ -16,3 +16,5 @@ SELECT count(*) AS cnt from user where email = "lychar85@gmail.com";
 INSERT INTO user (firstname, lastname, email, password) VALUE('charly','c', 'lychar85@gmail.com', 'azerty');
 
 SELECT * from user;
+
+SELECT userID, firstname, lastname, email, password from user where email = "lychar85@gmail.com";

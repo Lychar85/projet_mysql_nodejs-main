@@ -8,8 +8,11 @@
       <div class="row ">
         <div class="col-md-12">
           <!-- Sign in -->
-
-            <form action="" method="POST">
+          <% if(message.length > 0) { %> 
+            <div class="alert alert-warning" role="alert"><%= message %> </div>
+            <% } 
+          %> 
+            <form action="login" method="POST">
               <div class="mb-4">
                 <h2 class="h4">Se Connecter</h2>
               </div>

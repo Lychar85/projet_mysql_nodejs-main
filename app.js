@@ -1,8 +1,11 @@
 const express  = require('express'),
       app = express(),
-      util = require('util')
+      util = require('util'),
       mysql = require('mysql'),
-      port = 3500;
+      session = require('express-session'),
+      MySQLStore = require('express-mysql-session'),
+      flash = require('connect-flash'),
+      port = 3600;
 
 
 // Dotenv
@@ -26,8 +29,28 @@ db.connect(
 
 global.querysql = util.promisify(db.query).bind(db)
 
+//Express sessionMysql
+const sessionStore = new MySQLStore({}, db)
+
+//express session
+app.use(session({
+  name: 'biscuit',
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: true,
+  store: sessionStore,
+  cookie: { 
+    maxAge: 1000 * 60 * 60 * 24 //24 heures
+   }
+}))
+
+
 // EJS
-app.set('view engine', 'ejs'); 
+app.set('view engine', 'ejs');
+
+
+//activer les messages flash
+app.use(flash())
 
 
 // Static folder
@@ -38,6 +61,8 @@ app.use(express.static('public'));
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
+//Middleware
+const verifyAuth = require('./middleware/verifyauth')
 
 // Routes
 const index = require('./routes/indexRoute')
@@ -46,7 +71,7 @@ const dashboard = require('./routes/dashboardRoute')
 
 app.use('/', index)
 app.use('/auth', auth)
-app.use('/dashboard', dashboard)
+app.use('/dashboard',verifyAuth.getVerifyAuth, dashboard)
 
 app.get('*', function(req, res){
   res.render('404');

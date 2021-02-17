@@ -1,3 +1,6 @@
 exports.getDashboardPage = (req,res) =>{
-    return res.render('dashboard')
+    const user = req.session.user
+    console.log(user);
+    return res.render('dashboard', {user: user})
+    
 }
