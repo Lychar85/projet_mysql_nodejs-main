@@ -68,10 +68,12 @@ const verifyAuth = require('./middleware/verifyauth')
 const index = require('./routes/indexRoute')
 const auth = require('./routes/authRoute')
 const dashboard = require('./routes/dashboardRoute')
+const premium = require('./routes/premiumRoute')
 
 app.use('/', index)
 app.use('/auth', auth)
-app.use('/dashboard',verifyAuth.getVerifyAuth, dashboard)
+app.use('/dashboard', verifyAuth.getVerifyAuth, dashboard)
+app.use('/premium', premium)
 
 app.get('*', function(req, res){
   res.render('404');
