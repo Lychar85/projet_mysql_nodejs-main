@@ -2,7 +2,7 @@ const express  = require('express'),
       app = express(),
       util = require('util')
       mysql = require('mysql'),
-      port = 3500;
+      port = 3700;
 
 
 // Dotenv
