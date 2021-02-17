@@ -1,6 +1,30 @@
-const express  = require('express')
-,     app = express()
-,     port = 3500;
+const express  = require('express'),
+      app = express(),
+      util = require('util')
+      mysql = require('mysql'),
+      port = 3500;
+
+
+// Dotenv
+require('dotenv').config()
+
+
+// Mysql
+const db = mysql.createConnection({
+  host: process.env.DB_HOST ,
+  user: process.env.DB_USER ,
+  password:process.env.DB_PASS ,
+  database: process.env.DB_NAME
+})
+
+db.connect(
+  (err)=>{
+    if(err) {throw err}
+    else console.log('connect to server mysql')
+  }
+)
+
+global.querysql = util.promisify(db.query).bind(db)
 
 // EJS
 app.set('view engine', 'ejs'); 

@@ -7,3 +7,9 @@ exports.getRegisterPage = (req,res) =>{
 
     return res.render('register')
 }
+
+//POST 
+exports.postRegisterPage = (req,res) =>{
+
+    console.log(req.body)
+}
