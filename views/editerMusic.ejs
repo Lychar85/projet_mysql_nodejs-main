@@ -2,7 +2,7 @@
   <%- include('partials/navbar.ejs') %>
 
 <div class="contanier">
-    <form action="/dashboard/edit/<%= musicSingle.MusicID %> ?_method=PUT" method="POST">
+    <form action="/dashboard/music/edit/<%= musicSingle.MusicID %>?_method=PUT" method="POST">
         <div class="mb-4">
           <h2 class="h4">Ajouter une musique</h2>
         </div>
@@ -10,28 +10,28 @@
         <!-- Lastname -->
         <div class="mb-3">
           <div class="input-group">
-            <input type="text" class="form-control form__input" name="Music_author" value="Music.Music_author">
+            <input type="text" class="form-control form__input" name="Music_author" value=<%= musicSingle.Music_author %> >
           </div>
         </div>
     
         <!-- Firstname -->
         <div class="mb-3">
           <div class="input-group">
-            <input type="text" class="form-control form__input" name="Music__ft_author" placeholder="Music.Music__ft_author">
+            <input type="text" class="form-control form__input" name="Music__ft_author" value=<%=  musicSingle.Music__ft_author%> >
           </div>
         </div>
     
         <!-- Email -->
         <div class="mb-3">
           <div class="input-group">
-            <input type="text" class="form-control form__input" name="Music_name" placeholder="Music.Music_name">
+            <input type="text" class="form-control form__input" name="Music_name" value=<%=  musicSingle.Music_name%> >
           </div>
         </div>
     
         <!-- Password -->
         <div class="mb-3">
           <div class="input-group">
-            <input type="text" class="form-control form__input" name="Music_date" placeholder="Music.Music_date">
+            <input type="text" class="form-control form__input" name="Music_date" value=<%= musicSingle.Music_date %> >
           </div>
         </div>
     

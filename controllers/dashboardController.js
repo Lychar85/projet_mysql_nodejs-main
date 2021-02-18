@@ -41,7 +41,6 @@ exports.getEditMusicPage = async (req,res) =>{
     const musicSingle = await querysql("SELECT * FROM Music WHERE MusicID = '"+ req.params.id +"'; ")
 
     res.render('editerMusic', {musicSingle: musicSingle[0]})
-    console.log(res);
 }
 
 
@@ -52,7 +51,7 @@ exports.putEditMusicPage = async (req,res) => {
     // GESTION DES EXECPTIONS
     try {
         await querysql(
-            "UPDATE article SET Music_author = '" + Music_author + "', Music__ft_author = '" + Music__ft_author + "', Music_name = '" + Music_name + "', Music_date = '" + Music_date + "', MusicID = '" + MusicID + "', WHERE MusicID = '" + req.params.id + "';",
+            "UPDATE Music SET Music_author = '" + Music_author + "', Music__ft_author = '" + Music__ft_author + "', Music_name = '" + Music_name + "', Music_date = '" + Music_date + "' WHERE MusicID = '" + req.params.id + "';",
                 (err,result) => {
             if(err) {
                 res.send(err)
@@ -64,4 +63,12 @@ exports.putEditMusicPage = async (req,res) => {
     } catch(err) {
         res.status(400).json({message: err})
     }
+}
+
+//Supprimer une musique
+exports.supprMusicPage = async (req,res) =>{
+    await querysql(
+        "delete from Music WHERE MusicID = '" + req.params.id + "';"
+    )
+    res.redirect('/dashboard')
 }

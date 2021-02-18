@@ -4,6 +4,7 @@ const express  = require('express'),
       mysql = require('mysql'),
       session = require('express-session'),
       MySQLStore = require('express-mysql-session'),
+      methodOverride = require('method-override'),
       flash = require('connect-flash'),
       port = 3600;
 
@@ -26,6 +27,10 @@ db.connect(
     else console.log('connect to server mysql')
   }
 )
+
+
+// METHODE OVERRIDE
+app.use(methodOverride('_method'))
 
 global.querysql = util.promisify(db.query).bind(db)
 

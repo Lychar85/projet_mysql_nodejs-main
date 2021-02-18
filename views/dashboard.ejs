@@ -58,7 +58,10 @@
       <h2><%= element.Music__ft_author %></h3>
         <h3><%= element.Music_name %></h3>
       <p><%= element.Music_date %></p>
-      <td><a href="/dashboard/music/edit/<%= element.MusicID %>"><button type="button" class="btn btn-primary">Modifier</button></a></td>
+      <a href="/dashboard/music/edit/<%= element.MusicID %>"><button type="button" class="btn btn-primary">Modifier</button></a>
+      <form action="/dashboard/music/suppr/<%= element.MusicID %>?_method=DELETE " method="POST">
+      <button type="submit">Supprimer</button>  
+      </form>
     </div>
     <% }) %>
   </div>
