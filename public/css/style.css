@@ -61,15 +61,6 @@
   margin-right: 50px;
 
 }
-.gjoernzf::after{
-  content: "";
-  background: #f8c008;
-  height: 80px;
-  width: 2px;
-  position: absolute;
-  top: 0;
-  left: 840px;
-}
 
 /*page d'accueil============================================*/
 .header{
@@ -275,7 +266,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  margin-bottom: 500px;
 }
 .title-offre-premium{
   text-align: center;
@@ -283,7 +274,45 @@
   margin-bottom: 80px;
 }
 
+.gfbtseu{
+  display: flex;
+  justify-content: space-between;
+}
+.card-offre-premium{
+  background: #f8c008;
+  box-shadow: inset 0px 18px 13px #ffffff;
+  border: 5px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 600px;
+}
+
 .text-header-offre-premium{
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 20px;
+}
+
+.footer-offre-premium{
+  text-align: center;
+  top: 20px;
+  position: relative;
+}
+.btn-offre-premium{
+  text-align: center;
+  border: 3px solid #ffffff;
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 10px 40px 10px 40px;
+  font-size: 130%;
+  transition: 200ms;
+}
+.btn-offre-premium:hover{
+  transition: 200ms;
+  background: #00adfd;
+  border: 3px solid #00adfd;
+  border-radius: 30px;
+  color: #ffffff;
 }

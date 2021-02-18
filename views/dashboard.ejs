@@ -5,10 +5,53 @@
     <div class="row">
       <div class="col">
         <h1>Bonjour <%= user.firstname %></h1>
-        
       </div>
     </div>
   </div>
+
+
+<div class="container-fluid dashboard">
+  <form action="/music" method="POST">
+    <div class="mb-4">
+      <h2 class="h4">Ajouter une musique</h2>
+    </div>
+
+    <!-- Lastname -->
+    <div class="mb-3">
+      <div class="input-group">
+        <input type="text" class="form-control form__input" name="Music_author" placeholder="Artiste">
+      </div>
+    </div>
+
+    <!-- Firstname -->
+    <div class="mb-3">
+      <div class="input-group">
+        <input type="text" class="form-control form__input" name="Music__ft_author" placeholder="Artiste secondaire">
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <div class="input-group">
+        <input type="text" class="form-control form__input" name="Music_name" placeholder="Titre de la musique">
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="mb-3">
+      <div class="input-group">
+        <input type="text" class="form-control form__input" name="Music_date" placeholder="date de sortie">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-form-register">Ajouter</button>
+  </form>
+</div>
+
+
+
+
+
 
 
 <%- include('partials/footer.ejs') %>

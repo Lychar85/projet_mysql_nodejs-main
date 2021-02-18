@@ -9,7 +9,16 @@ CREATE TABLE user
 	lastname VARCHAR(50) NOT NULL,
   email VARCHAR(50) NOT NULL,
 	password VARCHAR(255) NOT NULL
-)
+);
+
+CREATE TABLE Music(
+        MusicID          Int  Auto_increment  NOT NULL ,
+        Music_author     Varchar (50) NOT NULL ,
+        Music__ft_author Varchar (50) NOT NULL ,
+        Music_name       Varchar (50) NOT NULL ,
+        Music_date       Varchar (50) NOT NULL
+	,CONSTRAINT Music_PK PRIMARY KEY (MusicID)
+)ENGINE=InnoDB;
 
 SELECT count(*) AS cnt from user where email = "lychar85@gmail.com";
 
