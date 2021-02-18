@@ -11,7 +11,7 @@
 
 
 <div class="container-fluid dashboard">
-  <form action="/music" method="POST">
+  <form action="/dashboard/music" method="POST">
     <div class="mb-4">
       <h2 class="h4">Ajouter une musique</h2>
     </div>
@@ -50,7 +50,19 @@
 
 
 
-
+<div class="container-fluid card-music-dashboard">
+  <div class="row">
+    <% music.forEach(element => { %>
+    <div class="col-md-2 card-music">
+      <h2><%= element.Music_author %> </h3>
+      <h2><%= element.Music__ft_author %></h3>
+        <h3><%= element.Music_name %></h3>
+      <p><%= element.Music_date %></p>
+      <td><a href="/dashboard/music/edit/<%= element.MusicID %>"><button type="button" class="btn btn-primary">Modifier</button></a></td>
+    </div>
+    <% }) %>
+  </div>
+</div>
 
 
 
