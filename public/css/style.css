@@ -1,7 +1,7 @@
 /* Navbar section =====================================*/
 .nav {
   width: 100%;
-
+  
 }
 .nav div.logo {
   float: left;
@@ -22,6 +22,7 @@
 
 #mainListDiv{
   width: 800px;
+  font-size: 22px;
 }
 
 .nav div.main_list ul {
@@ -59,6 +60,15 @@
 .nav-assist{
   margin-right: 50px;
 
+}
+.gjoernzf::after{
+  content: "";
+  background: #f8c008;
+  height: 80px;
+  width: 2px;
+  position: absolute;
+  top: 0;
+  left: 840px;
 }
 
 /*page d'accueil============================================*/
