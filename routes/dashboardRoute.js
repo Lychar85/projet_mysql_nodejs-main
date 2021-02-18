@@ -7,9 +7,9 @@ router.get("/", dashboardController.getDashboardPage)
 
 //Editer musique
 //GET
-router.get('/edit/:id', dashboardController.getEditMusicPage)
+router.get('/music/edit/:id', dashboardController.getEditMusicPage)
 //PUT
-router.put('/edit/:id', dashboardController.putEditMusicPage)
+router.put('/music/edit/:id', dashboardController.putEditMusicPage)
 
 
 

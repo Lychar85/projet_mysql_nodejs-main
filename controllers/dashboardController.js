@@ -40,8 +40,8 @@ exports.getEditMusicPage = async (req,res) =>{
     
     const musicSingle = await querysql("SELECT * FROM Music WHERE MusicID = '"+ req.params.id +"'; ")
 
-     res.render('editerMusic', {musicSingle: musicSingle})
-    
+    res.render('editerMusic', {musicSingle: musicSingle[0]})
+    console.log(res);
 }
 
 
@@ -57,7 +57,7 @@ exports.putEditMusicPage = async (req,res) => {
             if(err) {
                 res.send(err)
             } else {
-                return res.redirect('/dashboard/edit')
+                return res.redirect('/dashboard')
             }
         }
         )        
