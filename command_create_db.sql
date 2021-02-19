@@ -11,8 +11,9 @@ CREATE TABLE user
 	password VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE Music(
+CREATE TABLE Music (
         MusicID          Int  Auto_increment  NOT NULL ,
+        Music_image varchar(255) NOT NULL,
         Music_author     Varchar (50) NOT NULL ,
         Music__ft_author Varchar (50) NOT NULL ,
         Music_name       Varchar (50) NOT NULL ,
@@ -22,8 +23,11 @@ CREATE TABLE Music(
 
 SELECT count(*) AS cnt from user where email = "lychar85@gmail.com";
 
-INSERT INTO user (firstname, lastname, email, password) VALUE('charly','c', 'lychar85@gmail.com', 'azerty');
+alter table Music 
+ADD Music_image varchar(255) NOT NULL;
+
+delete from Music where MusicID = 2;
 
 SELECT * from user;
 
-SELECT userID, firstname, lastname, email, password from user where email = "lychar85@gmail.com";
+select * from Music;
