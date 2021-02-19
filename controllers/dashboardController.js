@@ -4,7 +4,7 @@ const { query } = require("express")
 //GET
 exports.getDashboardPage = async (req,res) =>{
     const user = req.session.user
-    const musicAdmin = await querysql('SELECT Music.Music_author , Music.Music__ft_author , Music.Music_name , Music.Music_date , Music.MusicID FROM Music ')
+    const musicAdmin = await querysql('SELECT Music.Music_author , Music.Music_image, Music.Music__ft_author , Music.Music_name , Music.Music_date , Music.MusicID FROM Music ')
 
      res.render('dashboard', {user: user, music: musicAdmin})
     
