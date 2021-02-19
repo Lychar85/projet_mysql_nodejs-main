@@ -1,0 +1,35 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbarmusic.ejs') %>
+
+<div class="container-fluid music-page">
+    <div class="row">
+
+   
+        <% music.forEach(element => { %>
+        <div class="col-md-2 listmusic">
+            <h3><%= element.Music_author %> </h3>
+            <h3><%= element.Music__ft_author %></h3>
+            <h4><%= element.Music_name %></h4>
+            <p><%= element.Music_date %></p>
+            <a class="btn btn-music" href="/">Écouter</a>
+        </div>
+        <% }) %>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('partials/footer.ejs') %>

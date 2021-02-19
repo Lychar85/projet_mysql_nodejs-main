@@ -34,9 +34,7 @@ exports.postLoginPage = async (req,res) =>{
                 lastname: user[0].lastname,
                 email: user[0].email
             };
-
-            console.log("session!", req.session.user);
-            return res.redirect('/dashboard')
+            res.redirect('/')
         }
 }
 

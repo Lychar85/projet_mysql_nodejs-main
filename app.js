@@ -2,6 +2,7 @@ const express  = require('express'),
       app = express(),
       util = require('util'),
       mysql = require('mysql'),
+      path = require('path'),
       session = require('express-session'),
       MySQLStore = require('express-mysql-session'),
       methodOverride = require('method-override'),
@@ -59,7 +60,7 @@ app.use(flash())
 
 
 // Static folder
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Middleware - BodyParser
@@ -68,17 +69,21 @@ app.use(express.urlencoded({extended: false}))
 
 //Middleware
 const verifyAuth = require('./middleware/verifyauth')
+const verifyAuthpremium = require('./middleware/verifyauthpremium')
 
 // Routes
 const index = require('./routes/indexRoute')
 const auth = require('./routes/authRoute')
 const dashboard = require('./routes/dashboardRoute')
 const premium = require('./routes/premiumRoute')
+const music = require('./routes/musicRoute')
 
 app.use('/', index)
 app.use('/auth', auth)
 app.use('/dashboard', verifyAuth.getVerifyAuth, dashboard)
 app.use('/premium', premium)
+app.use('/music', verifyAuthpremium.getVerifyAuthpremium, music)
+
 
 app.get('*', function(req, res){
   res.render('404');
