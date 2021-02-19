@@ -7,7 +7,7 @@ const express  = require('express'),
       MySQLStore = require('express-mysql-session'),
       methodOverride = require('method-override'),
       flash = require('connect-flash'),
-      port = 3600;
+      port = 4000;
 
 
 // Dotenv
@@ -70,6 +70,7 @@ app.use(express.urlencoded({extended: false}))
 //Middleware
 const verifyAuth = require('./middleware/verifyauth')
 const verifyAuthpremium = require('./middleware/verifyauthpremium')
+const verifyauthconnect = require('./middleware/verifyauthconnect')
 
 // Routes
 const index = require('./routes/indexRoute')
@@ -79,7 +80,7 @@ const premium = require('./routes/premiumRoute')
 const music = require('./routes/musicRoute')
 
 app.use('/', index)
-app.use('/auth', auth)
+app.use('/auth', verifyauthconnect.getVerifyauthconnect, auth)
 app.use('/dashboard', verifyAuth.getVerifyAuth, dashboard)
 app.use('/premium', premium)
 app.use('/music', verifyAuthpremium.getVerifyAuthpremium, music)
