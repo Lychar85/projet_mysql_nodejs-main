@@ -39,7 +39,7 @@ exports.postMusicPage = async (req,res) =>{
 exports.getEditMusicPage = async (req,res) =>{
     
     const musicSingle = await querysql("SELECT * FROM Music WHERE MusicID = '"+ req.params.id +"'; ")
-
+    console.log(musicSingle);
     res.render('editerMusic', {musicSingle: musicSingle[0]})
 }
 
