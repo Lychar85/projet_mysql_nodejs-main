@@ -14,7 +14,7 @@ exports.postMusicPage = async (req,res) =>{
 
     const {Music_author,Music__ft_author,Music_name,Music_date} = req.body
 
-    //Ajouter un utilisateur
+    //Ajouter une musique
     try{
 
         await querysql(
