@@ -46,7 +46,7 @@ exports.getEditMusicPage = async (req,res) =>{
 
 // Modifier une musique
 exports.putEditMusicPage = async (req,res) => {
-    const {Music_author,Music__ft_author,Music_name,Music_date,MusicID} = req.body
+    const {Music_author,Music__ft_author,Music_name,Music_date} = req.body
     
     // GESTION DES EXECPTIONS
     try {
